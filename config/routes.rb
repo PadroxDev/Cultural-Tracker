@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   get "news-calendar", to: "news_calendar#index", as: :news_calendar
   get "recommendations", to: "recommendations#index", as: :recommendations
 
-  get "sign_up", to: "registrations#new"
-  post "sign_up_pute", to: "registrations#create"
+  get "sign-up", to: "registrations#new"
+  post "sign-up", to: "registrations#create"
+  
+  get "sign-in", to: "sessions#new"
+  post "sign-in", to: "sessions#create"
+
+  delete "logout", to: "sessions#destroy", as: :logout
 
   root to: "main#index";
 end
